@@ -1,4 +1,4 @@
-
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -10,81 +10,85 @@ body {
     background: #f6f6f6;
 }
 
-/* الهيدر */
-/* الهيدر مع صورة الخلفية */
+/* Header */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 20px 30px;
-    background-image: url('./img/header2.jpg'); /* الصورة اللي حاططها */
+    background-image: url('./img/header2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: white;
     position: relative;
-    top: 0;
     width: 100%;
-    height: 200px;
-    z-index: 1000;
+    z-index: 1000;
 }
 
 .logo {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    position: relative;
-top: 20px;
 }
 
-/* القايمة */
+/* Navigation Menu */
 .menu {
     list-style: none;
     display: flex;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .menu li a {
     text-decoration: none;
-    color: black;
+    color:orange;
     font-weight: bold;
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 35px;
-    position: relative;
-    left: 25px;
-    top: 30px;
+    font-size: 30px;
 }
 
 .menu li a:hover {
-    color: orangered;
+    color: black;
 }
 
 .icon {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
 }
 
-/* المسافة تحت الهيدر */
-main, .menu-grid {
-    margin-top: 180px; /* عشان يظهر المنيو تحت الهيدر */
-    padding: 30px;
+/* Titles */
+h2 {
+    font-style: italic;
+    text-align: center;
+    font-size: 50px;
+    color: orangered;
+    margin: 30px 0 20px 0;
+}
+
+.Appetizers {
+    font-style: italic;
+    text-align: center;
+    font-size: 50px;
+    color: black;
+    margin: 30px 0 20px 0;
 }
 
 /* Grid Menu */
-.menu-grid {
+.menu-grid, .Appetizers-grid {
     display: grid;
-    grid-template-columns: repeat(3, 3fr); /* ← بدل auto-fit */
-    gap: 50px;
-    justify-content: center; /* يخلي العمودين في النص */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
     max-width: 1200px;
     margin: auto;
-    
+    padding: 0 20px 40px 20px;
 }
 
-/* الكارد */
-.menu-item {
+/* Menu Card */
+.menu-item, .menu-Appetizers {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 14px rgba(0,0,0,0.08);
@@ -92,13 +96,11 @@ main, .menu-grid {
     padding: 12px;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 450px;
-
+    height: auto;
 }
 
-/* الصورة */
-.menu-item img {
+/* Card Images */
+.menu-item img, .menu-Appetizers img {
     width: 100%;
     height: 250px;
     object-fit: cover;
@@ -106,76 +108,25 @@ main, .menu-grid {
     margin-bottom: 10px;
 }
 
-/* النصوص */
-.menu-item h3 {
+/* Card Text */
+.menu-item h3, .menu-Appetizers h3 {
     font-size: 20px;
     margin-bottom: 5px;
 }
 
-.menu-item p {
+.menu-item p, .menu-Appetizers p {
     font-size: 14px;
     color: #777;
     margin-bottom: 10px;
 }
 
-.menu-item .price {
+.menu-item .price, .menu-Appetizers .price {
     font-weight: bold;
     font-size: 18px;
     color:#ff6600;
 }
-h2{
-    font-style: italic;
-    text-align: center;
-    font-size: 50px;
-    color:orangered;
-}
-.Appetizers{
-    font-style: italic;
-    text-align: center;
-    font-size: 50px;
-    color:black;
 
-}
-.Appetizers-grid{
-     display: grid;
-    grid-template-columns: repeat(3, 3fr); /* ← بدل auto-fit */
-    gap: 50px;
-    justify-content: center; /* يخلي العمودين في النص */
-    max-width: 1200px;
-    margin: auto;
-}
-.menu-Appetizers{
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    text-align: center;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 450px;
-}
-.menu-Appetizers img{
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-.menu-Appetizers h3{
-     font-size: 20px;
-    margin-bottom: 5px;
-}
-.menu-Appetizers p{
-    font-size: 14px;
-    color: #777;
-    margin-bottom: 10px;
-}
-.menu-Appetizers .price{
-     font-weight: bold;
-    font-size: 18px;
-    color:#ff6600;
-}
+/* Visitors Input */
 .visitors {
     margin: 10px 0;
     display: flex;
@@ -187,27 +138,157 @@ h2{
     border-radius: 8px;
 }
 
-.visitors label {
-    font-weight: bold;
-    color: #333;
-    font-size: 14px;
-}
-
 .visitors input {
     width: 50px;
     height: 30px;
     text-align: center;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 14px;
 }
-button{
+
+/* Order Button */
+button.order {
     font-style: italic;
     font-weight: bold;
-    color: #ff6600;
+    color: black;
     font-size: 20px;
-    background-color: black;
-    border-radius: 20;
+    background-color:orange;
+    border-radius: 20px;
     width: 100%;
     height: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.order:hover {
+    background-color: #333;
+}
+.order {
+    display: flex;
+    align-items: center;
+    gap: 8px;             /* مسافة بين النص والأيقونة */
+    padding: 10px 15px;   /* لو عايز شكل أشيك */
+}
+
+/* تحكم كامل في حجم الأيقونة */
+.order img {
+    width: 20px;          
+    height: 20px;
+    object-fit: contain;  /* يمنع التشويه */
+}
+.cart-list{
+    display: flex;
+    align-items: center;
+    gap: 8px;             /* مسافة بين النص والأيقونة */
+    padding: 10px 15px
+}
+.cart-list img{
+    width: 100px;          
+    height: 100px;
+    object-fit: contain;
+    position: relative;
+    left: 50%;
+}
+.cart-box {
+    background: #fff;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+#cart-list li {
+    background: #f0f0f0;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cart-list button {
+    background: red;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Responsive for Tablets */
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 20px;
+    }
+    .logo {
+        width: 120px;
+        height: 120px;
+    }
+    h2, .Appetizers {
+        font-size: 40px;
+    }
+    .menu li a {
+        font-size: 25px;
+    }
+}
+
+/* Responsive for Mobile */
+@media (max-width: 750px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        white-space: nowrap;
+    }
+    .logo {
+        margin-bottom: 10px;
+    }
+    h2, .Appetizers {
+        font-size: 35px;
+    }
+    .menu-item img, .menu-Appetizers img {
+        height: 200px;
+    }
+    button.order {
+        font-size: 18px;
+        height: 45px;
+    }
+}
+
+/* Responsive for Small Mobile */
+@media (max-width: 480px) {
+    .menu li a {
+        font-size: 18px;
+    }
+    h2, .Appetizers {
+        font-size: 28px;
+    }
+    .menu-item h3, .menu-Appetizers h3 {
+        font-size: 18px;
+    }
+    .menu-item p, .menu-Appetizers p {
+        font-size: 12px;
+    }
+    .menu-item .price, .menu-Appetizers .price {
+        font-size: 16px;
+    }
+    .menu-item img, .menu-Appetizers img {
+        height: 180px;
+    }
+    button.order {
+        font-size: 16px;
+        height: 40px;
+}
 }

@@ -1,0 +1,270 @@
+/* إعادة ضبط */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* يمنع السكرول الأفقي */
+}
+
+body {
+    background-image: url('./img/home-phote2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 160px; /* مساحة للهيدر واللوجو */
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* الهيدر */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: relative;
+    z-index: 1000;
+}
+
+/* أيقونات السوشيال على اليسار */
+.icon2 {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    align-items: center;
+}
+
+/* المنيو على اليمين */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+/* لينكات المنيو */
+.menu li a {
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.menu li a:hover {
+    color: orangered;
+}
+
+/* أيقونات المنيو */
+.icon {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+/* اللوجو في الوسط */
+.logo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+/* الفورم */
+.contact-form {
+    background-color: black;
+    max-width: 500px;
+    margin: 50px auto; 
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-form .heading {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 12px;
+    font-weight: bold;
+    display: block;
+}
+
+.contact-form label {
+    color: white;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ff6384;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-form button[type="submit"] {
+    background-color: orangered;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form button[type="submit"]:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* الفوتر */
+.footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin-bottom: 15px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icons img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.footer img{
+    width: 30px;
+    height: 30px;
+}
+
+/* Media Queries لتصغير المقاسات على الشاشات الصغيرة بدون تغيير المكان */
+@media (max-width: 1024px) {
+    header{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+        gap: 10px;
+    }
+    .menu li a {
+        font-size: 30px;
+        position: relative;
+        right: 0%;
+        gap: 5px;
+        bottom: 150px;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .icon2 li img {
+        width: 20px;
+        height: 40px;
+        position: relative;
+        bottom: 20px;
+        
+    }
+
+    .contact-form {
+        width: 90%;
+        padding: 30px;
+        position: relative;
+        bottom: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu li a {
+        font-size: 28px;
+        
+    }
+
+    .logo {
+         order:1;
+        position: static;
+        transform: none;
+        margin: 0 auto;
+        width: 100px;
+        height: 50px;
+        position: relative;
+        bottom: 170px;
+        left: 10px;
+    }
+
+    .contact-form {
+        width: 90%;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        overflow-x: hidden; /* يمنع السكرول على الموبايل */
+    }
+
+    .menu li a {
+        font-size: 20px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .icon2 li img {
+        width: 30px;
+        height: 25px;
+           gap: 30px;
+
+    }
+
+    .logo {
+        width: 150px;
+        height:100px;
+   }
+}
