@@ -37,6 +37,8 @@ header {
     list-style: none;
     gap: 50px;
     align-items: center;
+    position: relative;
+    bottom: 100px;
 }
 
 /* المنيو على اليمين */
@@ -47,24 +49,26 @@ header {
     align-items: center;
 }
 
-/* لينكات المنيو */
+/* لينكات الهيدر */
 .menu li a {
     text-decoration: none;
-    font-size: 40px;
+    font-size: 28px;
     font-weight: bold;
     color: white;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
+    position: relative;
+    bottom: 120px;
 }
 
 .menu li a:hover {
     color: orangered;
 }
 
-/* أيقونات المنيو */
+/* أيقونات */
 .icon {
-    width: 25px;
+    width: 30px;
     height: 25px;
     object-fit: contain;
 }
@@ -76,6 +80,7 @@ header {
     border-radius: 50%;
     position: absolute;
     left: 50%;
+    bottom: 60px;
     transform: translateX(-50%);
     z-index: 100;
 }
@@ -260,6 +265,8 @@ textarea {
         width: 30px;
         height: 25px;
            gap: 30px;
+           position: relative;
+           top: 80px;
 
     }
 
